@@ -356,6 +356,12 @@ variable "fargate_profiles" {
   default     = {}
 }
 
+variable "fargate_subnets" {
+  description = "A list of private subnets to use for Fargate. Defaults to the subnets var if empty."
+  type        = list(string)
+  default     = []
+}
+
 variable "create_fargate_pod_execution_role" {
   description = "Controls if the EKS Fargate pod execution IAM role should be created."
   type        = bool
