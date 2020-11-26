@@ -7,7 +7,7 @@ module "fargate" {
   fargate_profiles                  = var.fargate_profiles
   iam_path                          = var.iam_path
   iam_policy_arn_prefix             = local.policy_arn_prefix
-  subnets                           = length(var.fargate_subnets) > 0 ? var.fargate_subnets : var.subnets
+  subnets                           = var.subnets
   tags                              = var.tags
 
   # Hack to ensure ordering of resource creation.
