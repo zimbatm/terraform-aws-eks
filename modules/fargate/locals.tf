@@ -5,7 +5,7 @@ locals {
 
   fargate_profiles_expanded = { for k, v in var.fargate_profiles : k => merge(
     {
-      tags    = var.tags,
+      tags = var.tags,
     },
     v,
   ) if var.create_eks }
