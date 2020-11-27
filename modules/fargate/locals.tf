@@ -5,7 +5,6 @@ locals {
 
   fargate_profiles_expanded = { for k, v in var.fargate_profiles : k => merge(
     {
-      subnets = var.subnets,
       tags    = var.tags,
     },
     v,
